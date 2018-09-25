@@ -1,5 +1,9 @@
 Delete rows where all variables have missing values
 
+See recent simplification below by
+Paul Dorfman
+sashole@bellsouth.net
+
 github
 https://tinyurl.com/y7erwfzq
 https://github.com/rogerjdeangelis/utl-delete-rows-where-all-variables-have-missing-values
@@ -42,6 +46,15 @@ EXAMPLE OUTPUT
 
 PROCESS
 ========
+
+See recent simplification below by
+Paul Dorfman
+sashole@bellsouth.net
+
+data want;
+  set have;
+  if cmiss(of _all_) > 0 then delete;
+run;quit;
 
 data want;
   set have;
