@@ -2,6 +2,10 @@
 Delete rows where all variables have missing values. 
 
     Delete rows where all variables have missing values
+    
+    See recent simplification below by
+    Paul Dorfman
+    sashole@bellsouth.net
 
     github
     https://tinyurl.com/y7erwfzq
@@ -45,6 +49,15 @@ Delete rows where all variables have missing values.
 
     PROCESS
     ========
+    
+    See recent simplification below by
+    Paul Dorfman
+    sashole@bellsouth.net
+
+    data want;
+      set have;
+      if cmiss(of _all_) > 0 then delete;
+    run;quit;
 
     data want;
       set have;
